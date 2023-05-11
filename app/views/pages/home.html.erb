@@ -1,0 +1,15 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.psychologicalscience.org/redesign/wp-content/uploads/2022/01/How-Haunted-Houses-Measure-Fear-Web-1024x431.jpg);">
+  <div class="container">
+    <h1>Scary Hut 1190</h1>
+  </div>
+</div>
+<div class="container my-5">
+  <div class="cards">
+    <% @haunted_houses.each do |haunted_house| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= haunted_house.banner_url %>)">
+        <%= haunted_house.name %>
+        <%= link_to '', haunted_house_path(haunted_house), class: 'card-category-link'%>
+      </div>
+    <% end %>
+  </div>
+</div>

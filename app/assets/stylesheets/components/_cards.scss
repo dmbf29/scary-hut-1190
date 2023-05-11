@@ -58,6 +58,13 @@
   }
 }
 
+.card-category-link{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
 .card-tags {
   display: flex;
   position: absolute;
@@ -68,6 +75,7 @@
     font-size: .7em;
     padding: 2px 4px;
     border-radius: 3px;
+    margin-right: 1px;
   }
   a {
     color: white;
