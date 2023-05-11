@@ -3,4 +3,8 @@ class Power < ApplicationRecord
   has_many :monsters, through: :curses # creates the method power.monsters
   has_many :houses, through: :monsters
   validates :name, presence: true, uniqueness: true
+
+  # def to_label
+  #   name.downcase
+  # end
 end

@@ -9,9 +9,17 @@
     <% @haunted_house.monsters.each do |monster| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= monster.image_url %>)">
         <%= monster.name %>
+        <%= link_to  new_monster_curse_path(monster), class: 'card-add-link' do %>
+          <i class="fa-solid fa-wand-sparkles"></i>
+        <% end %>
         <%= link_to monster_path(monster), data: { turbo_method: :delete, turbo_confirm: "Free #{monster.name}?" }, class: 'card-remove-link' do %>
           <i class="fa-solid fa-skull-crossbones"></i>
         <% end %>
+        <div class="card-tags">
+          <% monster.powers.each do |power| %>
+            <span><%= power.name %></span>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>
