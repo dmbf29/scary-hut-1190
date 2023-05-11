@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_10_081251) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_11_081010) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "curses", force: :cascade do |t|
+    t.bigint "power_id", null: false
+    t.bigint "monster_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["monster_id"], name: "index_curses_on_monster_id"
+    t.index ["power_id"], name: "index_curses_on_power_id"
+  end
 
   create_table "haunted_houses", force: :cascade do |t|
     t.string "name"
@@ -30,5 +39,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_10_081251) do
     t.index ["haunted_house_id"], name: "index_monsters_on_haunted_house_id"
   end
 
+  create_table "powers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "curses", "monsters"
+  add_foreign_key "curses", "powers"
   add_foreign_key "monsters", "haunted_houses"
 end

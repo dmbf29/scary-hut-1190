@@ -23,7 +23,7 @@ Monster.create!(
 
 Monster.create!(
   name: 'Yann',
-  image_url: 'https://res.cloudinary.com/dmbf29/image/upload/c_fill,g_face/7jTDPipAwMTY6maAxPMf1z1z',
+  image_url: 'https://avatars.githubusercontent.com/u/26819547?v=4',
   haunted_house: house
 )
 
@@ -63,6 +63,12 @@ Monster.create!(
   haunted_house: house
 )
 
-
-
 puts "... created #{Monster.count} monsters"
+
+puts "Creating powers..."
+15.times do
+  Power.create(
+    name: Faker::Superhero.unique.power
+  )
+end
+puts "... created #{Power.count} powers"

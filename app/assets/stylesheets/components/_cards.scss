@@ -36,6 +36,22 @@
   }
 }
 
+.card-tags {
+  display: flex;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  span {
+    background: #d43737;
+    font-size: .7em;
+    padding: 2px 4px;
+    border-radius: 3px;
+  }
+
+  a {
+    color: white;
+  }
+}
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
