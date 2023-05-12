@@ -7,7 +7,7 @@
 <div class="container mt-3">
   <div class="cards">
     <% @haunted_house.monsters.each do |monster| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= monster.image_url %>)">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= monster.photo.attached? ? cl_image_path(monster.photo.key) : monster.image_url %>)">
         <%= monster.name %>
         <%= link_to  new_monster_curse_path(monster), class: 'card-add-link' do %>
           <i class="fa-solid fa-wand-sparkles"></i>

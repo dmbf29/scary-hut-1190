@@ -4,4 +4,5 @@ class Monster < ApplicationRecord
   has_many :curses, dependent: :destroy
   has_many :powers, through: :curses # moth_man.powers
   validates :name, presence: true
+  has_one_attached :photo
 end

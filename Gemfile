@@ -46,6 +46,7 @@ gem "bootsnap", require: false
 gem "sassc-rails"
 
 # Added
+gem "cloudinary"
 gem 'faker'
 gem 'simple_form'
 

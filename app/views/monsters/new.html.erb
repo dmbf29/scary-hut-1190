@@ -2,7 +2,8 @@
   <h1>Summon a Monster</h1>
   <%= simple_form_for [@haunted_house, @monster] do |f| %>
     <%= f.input :name %>
-    <%= f.input :image_url %>
+    <%#= f.input :image_url %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit 'Summon', class: 'btn btn-danger mt-2' %>
   <% end %>
 </div>
